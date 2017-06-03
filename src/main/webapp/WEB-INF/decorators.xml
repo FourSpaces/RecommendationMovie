@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+    <!-- 不需要过滤的请求 -->
+    <excludes>
+        <pattern>/static/*</pattern>
+        <pattern>/remote/*</pattern>
+    </excludes>
+    <!-- 定义装饰器要过滤的页面 -->
+    <decorator name="default" page="base/default.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

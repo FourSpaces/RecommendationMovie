@@ -1,0 +1,108 @@
+.tags, #gaia .sub-tags {
+    overflow: hidden;
+    zoom: 1;
+}
+.tags .tag-list, #gaia .tags .sub-tag-list, #gaia .sub-tags .tag-list, #gaia .sub-tags .sub-tag-list {
+    width: auto;
+    display: inline;
+    padding-right: 5px;
+}
+
+.tags .activate, #gaia .sub-tags .activate {
+    background: #00aedb;
+    color: #fff;
+}
+
+label {
+    font-family: Tahoma;
+    vertical-align: middle;
+}
+
+.tags label input, .tags .custom-btn input,  .sub-tags label input,  .sub-tags .custom-btn input {
+    display: none;
+}
+
+input {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+
+    font-size: 12px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+
+.sort {
+    float: left;
+    padding-left: 2px;
+}
+.sort label {
+    margin-right: 20px;
+}
+
+.tool {
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+    padding: 15px 0;
+    overflow: hidden;
+    font-size: 13px;
+    color: #666;
+    zoom: 1;
+}
+ .tool input {
+    position: relative;
+    top: -3px;
+}
+
+.tags label:hover, #gaia .tags .custom-btn:hover, #gaia .sub-tags label:hover, #gaia .sub-tags .custom-btn:hover {
+    background: #eee;
+}
+
+.tags label, #gaia .tags .custom-btn, #gaia .sub-tags label, #gaia .sub-tags .custom-btn {
+    display: inline-block;
+    zoom: 1;
+    cursor: pointer;
+    padding: 4px 12px;
+    margin: 0 3px 5px 0;
+    color: #666;
+    font-size: 14px;
+    background: none;
+}
+.archives-tops {
+    padding: 2em 0 0em;
+}
+.tags .activate:hover, #gaia .sub-tags .activate:hover {
+    background: #00aedb;
+}
+
+.details-style{
+    height: 7em;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.overflow-concealment{
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+h3.tele {
+    white-space: nowrap;
+
+}
+.caption a{
+    text-decoration: none;
+    color: #fff;
+}
+.top-cinema a img{
+    width: 100%;
+    height: 468px;
+}
+.top-cinema{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/data/jpa
+       http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--指明 controller 所在包，并扫描其中的注解-->
+    <context:component-scan base-package="com.movie.os.controller"/>
+
+    <!-- 静态资源(js、image等)的访问 -->
+    <!--<mvc:default-servlet-handler/>-->
+    <mvc:resources mapping="/res/**" location="/WEB-INF/res/" cache-period="31556926"/>
+
+    <!-- 开启注解 -->
+    <mvc:annotation-driven/>
+
+
+    <!--ViewResolver 视图解析器-->
+    <!--用于支持Servlet、JSP视图解析-->
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <!--prefix 定义了所需访问的文件路径前缀-->
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <!--suffix，表示要访问的文件的后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+    <!-- 表示JPA Repository所在的包 -->
+    <jpa:repositories base-package="com.movie.os.repository"/>
+
+    <!-- 数据库配置文件加载 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/project.properties</value>
+                <value>classpath:/rdmv.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+
+    <!-- 创建实体管理  -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="defaultPersistenceUnit"/>
+        <property name="packagesToScan" value="com.movie.os.model" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://${jdbc.host}:3306/${jdbc.database}?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull</prop>
+                <prop key="hibernate.connection.username">${jdbc.username}</prop>
+                <prop key="hibernate.connection.password">${jdbc.password}</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.connection.useUnicode">true</prop>
+                <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.use_sql_comments">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.connection.autoReconnect">true</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="connection.autoReconnectForPools">true</prop>
+                <prop key="connection.is-connection-validation-required">true</prop>
+
+                <prop key="hibernate.c3p0.validate">true</prop>
+                <prop key="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</prop>
+                <prop key="hibernate.c3p0.min_size">5</prop>
+                <prop key="hibernate.c3p0.max_size">600</prop>
+                <prop key="hibernate.c3p0.timeout">1800</prop>
+                <prop key="hibernate.c3p0.max_statements">50</prop>
+                <prop key="hibernate.c3p0.preferredTestQuery">SELECT 1;</prop>
+                <prop key="hibernate.c3p0.testConnectionOnCheckout">true</prop>
+                <prop key="hibernate.c3p0.idle_test_period">3000</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 事务管理 -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!-- 开启事务管理注解 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+    <!-- 加载配置文件 -->
+    <!--<bean id="configLoading" class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--<value>classpath:loading.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--配置拦截器, 多个拦截器,顺序执行 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->
+            <!--<mvc:mapping path="/" />-->
+            <!--<mvc:mapping path="/api/**" />-->
+            <mvc:mapping path="/user/**" />
+            <mvc:mapping path="/mvScore/**" />
+            <mvc:mapping path="/mvRecommended/**" />
+
+            <bean class="com.movie.os.interceptor.CommonInterceptor"></bean>
+        </mvc:interceptor>
+        <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
+    </mvc:interceptors>
+
+</beans>

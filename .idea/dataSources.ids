@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - movie_system@localhost" uuid="f860d898-7a88-4b0e-93a8-2a24183cac76">
+    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="movie_system"/>
+      <table id="2" parent="1" name="dictionary">
+        <comment>字典表</comment>
+      </table>
+      <table id="3" parent="1" name="login_record">
+        <comment>登录记录表</comment>
+      </table>
+      <table id="4" parent="1" name="movie_info">
+        <comment>电影信息表</comment>
+      </table>
+      <table id="5" parent="1" name="movie_score">
+        <comment>评分表</comment>
+      </table>
+      <table id="6" parent="1" name="user_info">
+        <comment>用户信息表</comment>
+      </table>
+      <table id="7" parent="1" name="recommend_value"/>
+      <table id="8" parent="1" name="search">
+        <comment>搜索信息表</comment>
+      </table>
+      <column id="9" parent="2" name="id">
+        <comment>字典id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="10" parent="2" name="parent">
+        <comment>字典父级</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="11" parent="2" name="key">
+        <comment>词汇名</comment>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="12" parent="2" name="details">
+        <comment>词汇详情</comment>
+        <data-type>varchar(120)</data-type>
+      </column>
+      <column id="13" parent="2" name="value">
+        <comment>词汇值</comment>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="14" parent="2" name="create_time">
+        <comment>创建时间</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="2" name="update_time">
+        <comment>更新时间</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="2" name="remark">
+        <comment>备注</comment>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="17" parent="2" name="status">
+        <comment>状态</comment>
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="18" parent="2" name="sort">
+        <comment>排序</comment>
+        <data-type>smallint(3)</data-type>
+      </column>
+      <key id="19" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="20" parent="3" name="lid">
+        <comment>id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="21" parent="3" name="uid">
+        <comment>用户id</comment>
+        <data-type>char(20)</data-type>
+      </column>
+      <column id="22" parent="3" name="ip">
+        <data-type>varchar(16)</data-type>
+      </column>
+      <column id="23" parent="3" name="login_time">
+        <comment>创建时间</comment>
+        <data-type>date</data-type>
+      </column>
+      <key id="24" parent="3" name="PRIMARY">
+        <columns>lid</columns>
+        <primary>1</primary>
+      </key>
+      <column id="25" parent="4" name="mid">
+        <comment>电影id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="26" parent="4" name="name">
+        <comment>电影名字</comment>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="27" parent="4" name="tag">
+        <comment>标签</comment>
+        <data-type>varchar(240)</data-type>
+      </column>
+      <column id="28" parent="4" name="poster">
+        <comment>海报</comment>
+        <data-type>varchar(240)</data-type>
+      </column>
+      <column id="29" parent="4" name="director">
+        <comment>导演</comment>
+        <data-type>varchar(240)</data-type>
+      </column>
+      <column id="30" parent="4" name="screenwriter">
+        <comment>编剧</comment>
+        <data-type>varchar(240)</data-type>
+      </column>
+      <column id="31" parent="4" name="performer">
+        <comment>主演</comment>
+        <data-type>varchar(240)</data-type>
+      </column>
+      <column id="32" parent="4" name="score">
+        <comment>评分</comment>
+        <data-type>int(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="33" parent="4" name="scoreitem">
+        <comment>评分人数</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="34" parent="4" name="time">
+        <comment>创建时间</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="35" parent="4" name="details">
+        <comment>详情</comment>
+        <data-type>text</data-type>
+      </column>
+      <column id="36" parent="4" name="status">
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="37" parent="4" name="midbak">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="38" parent="4" name="UK_pbyjg236ajd0kim5ecg70dtyl">
+        <columns>midbak</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="39" parent="4" name="PRIMARY">
+        <columns>mid</columns>
+        <primary>1</primary>
+      </key>
+      <key id="40" parent="4" name="UK_pbyjg236ajd0kim5ecg70dtyl">
+        <columns>midbak</columns>
+        <underlying-index>UK_pbyjg236ajd0kim5ecg70dtyl</underlying-index>
+      </key>
+      <foreign-key id="41" parent="4" name="FKgfx9gxq200176y9uyf0ej6nht">
+        <columns>midbak</columns>
+        <ref-key>~.movie_score.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="42" parent="5" name="sid">
+        <comment>评分id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="43" parent="5" name="mid">
+        <comment>电影id</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="44" parent="5" name="uid">
+        <comment>用户id</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="45" parent="5" name="score">
+        <comment>评分</comment>
+        <data-type>int(4)</data-type>
+      </column>
+      <column id="46" parent="5" name="time">
+        <comment>更新时间</comment>
+        <data-type>date</data-type>
+      </column>
+      <column id="47" parent="5" name="midbak">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="48" parent="5" name="FKjdiwih7ewmuel10hijh03093s">
+        <columns>midbak</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="49" parent="5" name="uid">
+        <columns>uid</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="50" parent="5" name="PRIMARY">
+        <columns>sid</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="51" parent="5" name="FKjdiwih7ewmuel10hijh03093s">
+        <columns>midbak</columns>
+        <ref-key>~.movie_info.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="52" parent="6" name="uid">
+        <comment>用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="53" parent="6" name="username">
+        <comment>用户名</comment>
+        <data-type>char(20)</data-type>
+      </column>
+      <column id="54" parent="6" name="password">
+        <comment>密码</comment>
+        <data-type>char(34)</data-type>
+        <default-expression>&apos;4QrcOUm6Wau+VuBX8g+IPg==&apos;</default-expression>
+      </column>
+      <column id="55" parent="6" name="nickname">
+        <comment>昵称</comment>
+        <data-type>char(20)</data-type>
+      </column>
+      <column id="56" parent="6" name="avatar">
+        <comment>头像</comment>
+        <data-type>char(200)</data-type>
+      </column>
+      <column id="57" parent="6" name="reg_time">
+        <comment>创建时间</comment>
+        <data-type>date</data-type>
+      </column>
+      <column id="58" parent="6" name="type">
+        <comment>类型：1普通用户  2 管理员</comment>
+        <data-type>tinyint(200)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="59" parent="6" name="status">
+        <comment>状态</comment>
+        <data-type>tinyint(4)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="60" parent="6" name="remark">
+        <comment>备注</comment>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <key id="61" parent="6" name="PRIMARY">
+        <columns>uid</columns>
+        <primary>1</primary>
+      </key>
+      <column id="62" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="63" parent="7" name="uid">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="64" parent="7" name="mid">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="65" parent="7" name="score">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="66" parent="7" name="uid">
+        <columns>uid</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="67" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="68" parent="8" name="rid">
+        <comment>搜索ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="69" parent="8" name="keyword">
+        <comment>关键字</comment>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="70" parent="8" name="uid">
+        <comment>用户id</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="71" parent="8" name="time">
+        <comment>时间</comment>
+        <data-type>date</data-type>
+      </column>
+      <key id="72" parent="8" name="PRIMARY">
+        <columns>rid</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
