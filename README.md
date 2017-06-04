@@ -6,9 +6,9 @@
  
 就这样实现了推荐系统
  
-##推荐系统的 构架图
-![系统架构图](https://github.com/BuleAnt/RepositoryResources/image/RecommendationMovie/XiTongJieGou.png)
-##推荐系统的 功能图
-![系统功能图](https://github.com/BuleAnt/RepositoryResources/image/RecommendationMovie/jie_gou_she_ji.png)
-##推荐系统的 流程图
-![系统流程图](https://github.com/BuleAnt/RepositoryResources/image/RecommendationMovie/liu_cheng_tu.png)
+## 推荐系统的 构架图
+![系统架构图]( https://github.com/BuleAnt/RepositoryResources/image/RecommendationMovie/XiTongJieGou.png)
+## 推荐系统的 功能图
+![系统功能图] (https://github.com/BuleAnt/RepositoryResources/image/RecommendationMovie/jie_gou_she_ji.png)
+## 推荐系统的 流程图
+![系统流程图] (https://github.com/BuleAnt/RepositoryResources/image/RecommendationMovie/liu_cheng_tu.png)
