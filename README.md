@@ -19,3 +19,10 @@ github中README.md关联图片的图片地址的格式如下：
 
 https://github.com/用户名/repository仓库名/raw/分支名master/图片文件夹名称/***.png or***.jpg
 
+# 部署调试：
+- 导入数据库：
+  将 movie_system.sql 导入MySql数据库中。
+ 
+- 修改配置文件：
+   找到 RecommendationMovie/src/main/resources/project.properties 文件，修改数据库信息为你自己的数据库信息。
+
