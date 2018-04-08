@@ -6,11 +6,11 @@
  
 就这样实现了推荐系统
  
-## 推荐系统的 构架图
+### 推荐系统的 构架图
 ![系统架构图]( https://github.com/BuleAnt/RepositoryResources/raw/master/image/RecommendationMovie/XiTongJieGou.png)
-## 推荐系统的 功能图
+### 推荐系统的 功能图
 ![系统功能图](https://github.com/BuleAnt/RepositoryResources/raw/master/image/RecommendationMovie/jie_gou_she_ji.png)
-## 推荐系统的 流程图
+### 推荐系统的 流程图
 ![系统流程图](https://github.com/BuleAnt/RepositoryResources/raw/master/image/RecommendationMovie/liu_cheng_tu.png)
 
 
@@ -19,7 +19,7 @@ github中README.md关联图片的图片地址的格式如下：
 
 https://github.com/用户名/repository仓库名/raw/分支名master/图片文件夹名称/***.png or***.jpg
 
-# 部署调试：
+### 部署调试：
 - 导入数据库：
   将 movie_system.sql 导入MySql数据库中。
  
