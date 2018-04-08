@@ -19,6 +19,9 @@ github中README.md关联图片的图片地址的格式如下：
 
 https://github.com/用户名/repository仓库名/raw/分支名master/图片文件夹名称/***.png or***.jpg
 
+### 注意：
+此项目仅仅实现了推荐系统的 业务模块和存储模块，推荐引擎模块，并不在此项目中。
+
 ### 部署调试：
 - 导入数据库：
   将 movie_system.sql 导入MySql数据库中。
